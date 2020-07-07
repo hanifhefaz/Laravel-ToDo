@@ -1,12 +1,13 @@
 @extends('tasks.taskslayout')
 
 @section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
 
-    <h1>Updating Tasks Form</h1>
-
-    <div class="alert alert-success">
-
-    </div>
+                <h1 class="text-center">Update Task </h1>
+                <div class="card">
+                    <div class="card-body">
     <form class="form-group" method="post" action="{{route('task.update', $task->id)}}">
         @csrf
         @method('patch')
@@ -19,7 +20,12 @@
                 </ul>
             </div>
         @endif
-        <input type="text" name="body" value="{{$task->body}}">
-        <input type="submit" value="Update">
+        <input type="text" name="body" value="{{$task->body}}" class="text-center">
+        <input type="submit" value="Update" class="btn btn-outline-success">
     </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
